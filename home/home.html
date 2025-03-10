@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/Ifarma_Integracao-main/imgs/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+
+     body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    background: linear-gradient(to bottom, #360101 , #9C0202);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    cursor: pointer;
+        
+ }
+
+header{
+    top: 0;
+            left: 0;
+            right: 0;
+            height: 70px; 
+            padding: 10px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header .log {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header img {
+    width: 70px;
+}
+.iconPerf {
+    position: fixed;
+    right: 1.5cm;
+            top: 3.5cm;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            z-index: 10;
+} 
+
+    main {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding-top: 110px;
+    box-sizing: border-box;
+}
+
+    h2 { 
+    font-size: 30px;
+    color: aliceblue;
+    margin-left: 1px;
+} 
+    button, input[type="button"] {
+    font-family: 'Raleway', sans-serif; 
+    font-size: 16px;  
+    font-weight: 600;  
+    color: rgb(9, 4, 4); 
+    border: none; 
+    padding: 12px 18px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: 0.3s; 
+    width: 100%;
+    max-width: 220px;
+    text-align: center;
+}
+
+button:hover, input[type="button"]:hover {
+    background: #a21010;
+    transform: scale(1.05);
+}
+
+
+.footer-content {
+    display: block;
+    flex-wrap:wrap; 
+   
+}
+
+#gps-btt{
+    display: flex;
+    flex-direction:column;
+    
+}
+.button-group1{
+    margin-top: 45px;
+    margin-left: 125px; 
+}
+.button-group2{
+    margin-left: 32vw; 
+    margin-top: -295.5px;
+}
+.button-group3{
+    margin-left: 54vw;
+    margin-top: -223px; 
+}
+.button-group4{
+    margin-left: 75vw; 
+    margin-top: -285px;
+}
+
+#bttHome {
+    margin: 10px;
+    width: 180px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+}
+
+
+
+.logoIndex{
+    width: 100%;
+    max-width: 400px;
+}
+/* escoLog */
+.log{
+    font-size: 18px;
+    display: flex;
+    color: aliceblue;
+}
+
+.logDD{
+    font-size: 25px;
+    color: aliceblue;
+    text-align: center;
+    margin-top: 80px;
+}
+button{
+    font-family: 'Inter', sans-serif;
+}
+
+.js{
+    display: none;
+    width: 1000px;
+    height: 140px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.js.abrir{
+    display: flex;
+    background: linear-gradient(to bottom, #360101af , #9c02029a);
+}
+
+.pop-up{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+#popUp1{
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+#popUp2{
+    margin-top: -90px;
+    margin-left: 170px;
+}
+
+
+@media (max-width: 1024px) {
+    .button-group1,
+    .button-group2,
+    .button-group3,
+    .button-group4 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px auto;
+    }
+
+    .iconPerf {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 60px;
+        height: 60px;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .button-group1,
+    .button-group2,
+    .button-group3,
+    .button-group4 {
+        width: 90%;
+    }
+
+    button {
+        width: 100%;
+        max-width: 180px;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+}
+
+
+    </style>
+
+    <title>IFarma</title>
+</head>
+<body>
+    <header>
+        <div class="log">
+            <img src="/imgs/logo.png" width="80px">
+            <h2>IFarma</h2>
+        </div>
+    </header>
+
+    <main class="footer-content">
+        <img class="iconPerf" src="/imgs/perfil-cinza-removebg-preview.png" width="80px" onclick="window.location.href='perf.html'">
+        
+        <!-- <form action="/button" method="get" class="footer-content"> -->
+            <!-- <div class="footer-content"> -->
+                <div id="gps-btt" class="button-group1">
+                    <h2 id="h2Home" class="CadHome">Cadastrar</h2>
+                    <input type="button" id="bttHome" class="cads" onclick="window.location.href='CadFunc.html'" value="Funcionario" >
+                    <input type="button" id="bttHome" class="cads" onclick="window.location.href='CadProd.html'" value="Produto">
+                    <input type="button" id="bttHome" class="cads" onclick="window.location.href='CadServ.html'" value="Servicos">
+                    <input type="button" id="bttHome" class="cads" onclick="window.location.href='CadForn.html'" value="Fornecedores">
+                    <input type="button" id="bttHome" class="cads" onclick="window.location.href='CadCli.html'" value="Clientes">
+                </div>
+                
+                <div id="gps-btt" class="button-group2">
+                    <h2 id="h2Home" class="ContHome">Controle</h2>
+                    <input type="button" id="bttHome" class="conts" onclick="window.location.href='ContEsto.html'" value="Estoque" >
+                    <input type="button" id="bttHome" class="conts" onclick="window.location.href='ContRece.html'" value="Receitas " >
+                    <input type="button" id="bttHome" class="conts" onclick="window.location.href='ContPedi.html'" value="Pedidos" >
+                </div>
+                
+                <div id="gps-btt" class="button-group3">
+                    <h2 id="h2Home" class="RegsHome">Registro</h2>
+                    <input type="button" id="bttHome" class="regs" onclick="window.location.href='RegVend.html'" value="Vendas">
+                    <input type="button" id="bttHome" class="regs" onclick="window.location.href='RegRela.html'" value="Relatorio">
+                </div>
+
+
+                <div id="gps-btt" class="button-group4">
+                    <h2 id="h2Home" class="HistHome">Historico</h2>
+                    <input type="button" id="bttHome" class="hist" onclick="window.location.href='/cads/HistNotFisc.html'" value="Nota Fiscal">
+                    <input type="button" id="bttHome" class="hist" onclick="window.location.href='/home/HistVend.html'" value="Historico de Vendas">
+                    <input type="button" id="bttHome" class="hist" onclick="window.location.href='/home/HistPedi.html'" value="Historico de Pedidos">
+                </div>
+            <!-- </div> -->
+        <!-- </form> -->
+    </main>
+</body>
+</html>

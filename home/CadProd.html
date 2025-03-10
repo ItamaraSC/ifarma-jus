@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="/Ifarma_Integracao-main/imgs/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #360101 , #9C0202);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    cursor: pointer;
+ }
+ header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px; 
+            padding: 10px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            z-index: 1000;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+    header .log {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: aliceblue;
+}
+
+
+
+header img {
+    width: 70px;
+}
+
+.corpInf {
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+            color: aliceblue;
+            margin-top: 100px; /* Ajuste para compensar o cabeçalho fixo */
+            padding: 20px;
+            border-radius: 10px;
+}
+
+h2 {
+    
+    font-size: 30px;
+    color: aliceblue;
+    text-align: center;
+}
+form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        column-gap: 40px;
+        align-items: start;
+        width: 90%;
+    }
+    .gps-informacoes {
+        grid-column: span 2; 
+    }
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: aliceblue;
+  }
+
+.criarDado {
+    height: 35px;
+        border-radius: 5px;
+        border: none;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    
+}
+
+.bttCadastrar {
+    grid-column: span 2; 
+    justify-self: center;
+        height: 50px;
+        width: 80%;
+        margin-top: 20px;
+        border-radius: 5px;
+        background: #f7f7f7;
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        transition: background 0.3s;
+        
+    }
+
+    .bttCadastrar:hover {
+        background: #a21010;
+        transform: scale(1.05);
+    }
+
+
+.js{
+    display: none;
+    width: 1000px;
+    height: 140px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.js.abrir{
+    display: flex;
+    background: linear-gradient(to bottom, #360101af , #9c02029a);
+}
+
+.pop-up{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+#popUp1{
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+#popUp2{
+    margin-top: -90px;
+    margin-left: 170px;
+}
+
+
+/* Responsividade */
+ @media (max-width: 768px) {
+        header {
+            flex-direction: column; 
+            padding: 10px 0; 
+            height: auto; 
+            gap: 10px; 
+        }
+
+        header .log {
+            text-align: center; 
+        }
+
+        header img {
+            width: 50px; 
+        }
+
+        h2 {
+            font-size: 30px; 
+        }
+    }
+
+
+    </style>
+
+    <title>IFarma- Cadastro Produtos</title>
+</head>
+<body>
+    <header>
+        <div class="log">
+            <img src="/imgs/logo.png" width="80px" alt="Logo IFarma">
+            <h2>IFarma</h2>
+        </div>
+    </header>
+
+    <main class="corpInf">
+        <h2>Cadastrar Produtos</h2>
+        <form action="/home/home.html" id="cadProd" method="get">
+
+            <div> 
+                <label >Nome </label>
+                <input type="text" id="nome" class="criarDado" required>
+              </div>  
+              <div> 
+                <label >Validade</label>
+                <input type="text" id="dtValid" class="criarDado" required>
+                </div>
+                <div> 
+                <label >Data de Fabricação</label>
+                <input type="text" id="dtFabri" class="criarDado" required>
+                </div>
+            <div> 
+
+                <label >Quantidade</label>
+                <input type="text" id="quantidade" class="criarDado" required>
+            </div>
+
+            <div> 
+                <label >Receita Médica</label>
+                <select id="receiMedi" class="criarDado">
+                    <option value="">Selecione</option>
+                    <option value="SIM">Sim</option>
+                    <option value="NÃO">Não</option>
+                </select>
+            </div>
+           <div> 
+                <label >Descrição</label>
+                <input type="text" id="descricao" class="criarDado" required>
+            </div>
+
+            <div>            
+                <label>Código</label>
+                <input type="text" id="codigo" class="criarDado" required>
+                </div>
+                <div> 
+                <label >Valor</label>
+                <input type="text" id="valor" class="criarDado" required>
+            </div>
+            <div> 
+                <label >Lote</label>
+                <input type="text" id="lote" class="criarDado" required>
+            </div>  
+            <div>             
+                <label>Categoria</label>
+                <input type="text" id="categoria" class="criarDado" required>
+            </div>
+            <button type="submit" class="bttCadastrar">Cadastrar</button>
+        </form>
+
+        
+        <div class="mt-3" id="mensagem"></div>
+
+    
+    </main>
+
+    <script>
+
+        document.getElementById('cadProd').addEventListener('submit', function(event){
+            event.preventDefault();
+
+            const Nome = document.getElementById('nome').value;
+            const Dt_Validade = document.getElementById('dtValid').value;
+            const Dt_Fabrica = document.getElementById('dtFabri').value;
+            const Qtd_Prod = document.getElementById('quantidade').value;
+            const Receita_Medica = document.getElementById('receiMedi').value;
+            const Descricao = document.getElementById('descricao').value;
+            const SKU = document.getElementById('codigo').value;
+            const Vlr = document.getElementById('valor').value;
+            const Lote_Prod = document.getElementById('lote').value;
+            const Categoria = document.getElementById('categoria').value;
+
+            if(!Receita_Medica){
+                alert('Selecione a receita médica!');
+                return;
+            }
+
+            const tb_produto = {Nome , SKU , Descricao , Dt_Fabrica ,  Dt_Validade ,  Qtd_Prod , Vlr , Lote_Prod , Categoria , Receita_Medica };
+
+            fetch('http://localhost:3004/Cadastrar/Produtos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(tb_produto)
+            })
+            .then(response => response.json())
+            .then(data => {
+                // const mensagem = document.getElementById('mensagem');
+                // mensagem.classList.add('alert', 'alert-success');
+                // mensagem.innerText = data.message;
+                // document.getElementById('cadProd').reset();
+                if(data.message === 'Produto cadastro realizado com sucesso!'){
+                    alert('Produto cadastro realizado com sucesso!');
+                    window.location.href = '/home/home.html'
+                }
+            })
+            .catch(error => {
+                const mensagem = document.getElementById('mensagem');
+                mensagem.classList.add('alert', 'alert-danger');
+                mensagem.innerText = error.message;
+            });
+        });
+
+    </script>
+
+</body>
+</html>

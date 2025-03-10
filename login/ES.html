@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/Ifarma_Integracao-main/imgs/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+         body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    background: linear-gradient(to bottom, #360101 , #9C0202);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    cursor: pointer;
+        
+ }
+
+header{
+    position: relative; 
+    padding: 20px 0;
+    height: 100px;
+     width: 100%; 
+    z-index: 1000; 
+    display: flex; 
+    align-items: center;
+    justify-content: space-between; 
+    padding: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    gap: 15px;
+}
+
+header .log {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header img {
+    width: 80px;
+}
+main {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding-top: 10px;
+    box-sizing: border-box;
+    
+}
+
+    h2 { 
+    font-size: 30px;
+    color: aliceblue;
+    margin-left: 1px;
+} 
+.redeSenh{
+    width: 90%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+}
+.dadoRedSenh{
+    display: block;
+}
+
+.btn-redeSenh {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .bttES {
+            width: 140px;
+            height: 40px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            background: #9C0202;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .bttES:hover {
+            background: #b30000;
+        }
+
+
+        .js{
+    display: none;
+    width: 1000px;
+    height: 140px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.js.abrir{
+    display: flex;
+    background: linear-gradient(to bottom, #360101af , #9c02029a);
+}
+
+.pop-up{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+#popUp1{
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+#popUp2{
+    margin-top: -90px;
+    margin-left: 170px;
+}
+
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .log img {
+                width: 50px;
+            }
+        }
+
+    </style>
+   
+   
+    <title>IFarma</title>
+</head>
+<body>
+    <header>
+        <div class="log">
+            <img src="/Ifarma_Integracao-main/imgs/logo.png" width="80px" alt="Logo IFarma">
+            <h2>IFarma</h2>
+        </div>
+    </header>
+
+    <main>
+        <div class="redeSenh">
+            <h1>Redefinir Senha</h1>
+
+            <form class="RedSenha" action="escoLog.html" method="get">
+
+                <label class="dadoRedSenh" for="email">E-mail</label>
+                <input type="email" name="email" class="lp" id="email" placeholder="Digite seu e-mail" required>
+                <br><br>
+
+                <button type="submit" class="bttES" >Voltar</button>
+
+                <input type="submit" class="bttES" name="button" value="Enviar" >
+            </main>
+        </div>
+    
+
+</body>
+</html>

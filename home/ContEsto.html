@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Ifarma_Integracao-main/Ifarma.css">
+    <link rel="shortcut icon" href="/Ifarma_Integracao-main/imgs/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+    
+    <style>
+
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: 'Nunito', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #360101 , #9C0202);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            cursor: pointer;
+         }
+             header {
+            height: 20px; 
+            padding: 30px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            gap: 15px;
+        }
+        
+        header .log {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: aliceblue;
+        }
+        
+        header img {
+            width: 70px;
+        }
+        
+        .corpInf {
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+            color: aliceblue;
+            margin-top: 10px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            font-size: 30px;
+            color: aliceblue;
+            text-align: center;
+        }
+
+
+        .gps-informacoes {
+            grid-column: span 2;
+        }
+
+        .altContEsto {
+            display: flex;
+            align-items: center;
+        }
+
+        .infs {
+            display: flex;
+        }
+
+        .criarDado {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #lupa {
+            cursor: pointer;
+        }
+            
+.js{
+    display: none;
+    width: 1000px;
+    height: 140px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.js.abrir{
+    display: flex;
+    background: linear-gradient(to bottom, #360101af , #9c02029a);
+}
+
+.pop-up{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+#popUp1{
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+#popUp2{
+    margin-top: -90px;
+    margin-left: 170px;
+}
+
+.estoque{
+    display: flex;
+    justify-content: center;
+}
+.infsExeProd{
+    width: 200px;
+    display: flex;
+}
+
+.infs{
+    display: flex;
+    margin-bottom:  85px;
+    margin-left:30px ;
+}
+.infsExe{
+    width: 100%;
+}
+.altContEsto{
+    margin-top: 70px;
+}
+
+.padrao {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colunas por linha */
+    gap: 20px; /* Adiciona um espaçamento de 20px entre os cards */
+    width: 80%;
+    margin: auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 45px;
+                gap: 10px;
+            }
+
+            header .log {
+                text-align: center;
+            }
+
+            header img {
+                width: 50px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            form {
+                grid-template-columns: 1fr; /* Em telas pequenas, a lupa fica abaixo do input */
+                gap: 15px;
+            }
+
+            #lupa {
+                margin-top: 10px; 
+                align-self: center;
+            }
+        }
+
+            </style>
+ 
+    <title>IFarma</title>
+</head>
+<body>
+    <header>
+        <div class="log">
+            <img src="/Ifarma_Integracao-main/imgs/logo.png" width="80px" alt="Logo IFarma">
+            <h2>IFarma</h2>
+        </div>
+    </header>
+
+    <main class="corpInf">
+        <h2 style="font-size: 40px;"> Estoque </h2>
+
+        <div class="estoque">
+            <form method="get" id="estoque">
+               
+            <!-- <div> -->
+                <div class="altContEsto">
+                <label class="infs"> Produto</label>
+                   <input type="text" id="pesquisa" class="criarDado" required>
+                   
+                   <img src="/Ifarma_Integracao-main/imgs/lupa.png" width="59px" onclick="abrirPesq()" id="lupa">
+
+               </div>
+
+            <!-- </div> -->
+
+                <div class="js" id="js">
+                    <div class="pesq">
+
+                        <!-- <h3>Produto</h3> -->
+                        <div class="pop-up" id="popUp1">
+                            <label class="infs" id="nome"></label>
+                            <br>
+                            <label class="infs" id="dtValid"></label>
+                            <br>
+                            <label class="infs" id="sku"></label>
+                            <br>
+                            <label class="infs" id="qtd"></label>
+                            <br>
+                            <!-- <label class="infs" id="fornecedo"></label> -->
+                            <!-- <br> -->
+                            <!-- <label class="infs" id="">Data Movimentacao</label> -->
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+
+    </main>
+                    <script>
+
+                        function formatarData(dataISO){
+                            if(!dataISO)return "Data invalida";
+
+                            const data = new Date (dataISO);
+                            const dia = String(data.getDate()).padStart(2 , "0 ");
+                            const mes = String(data.getMonth() + 1).padStart(2, "0");
+                            const ano = data.getFullYear();
+                            return `${dia}/${mes}/${ano}`;
+                        }
+
+                        function abrirPesq() {
+                            const conf = document.getElementById('js')
+                            const lupa = document.getElementById('lupa') 
+
+                            if(conf.classList.contains('abrir')){
+                                conf.classList.remove('abrir')
+                            }
+                            else{
+                                conf.classList.add('abrir')
+                            }
+
+                            const produto = document.getElementById('pesquisa').value;
+
+                            if(!produto){
+                                alert('Por favor, digite um produto!');
+                                return;
+                            }
+
+                            fetch(`http://localhost:3011/Estoque?produto=${encodeURIComponent(produto)}`)
+                           .then(response => {
+                                if(!response.ok){
+                                     throw new Error('Falha na requisição');
+                                }
+                                return response.json();
+                           })
+                           .then(data => {
+                            console.log('produto encontrado' ,data);
+
+                            const estoque = document.getElementById('js');
+                            estoque.innerHTML = '';
+
+                            data.forEach(item => {
+                                console.log(item);
+
+                                const produtoDiv = document.createElement('div');
+                                produtoDiv.classList.add('pop-up');
+                                produtoDiv.innerHTML = `
+                                <label class="infs">Nome : ${item.Nome}</label><br>
+                                <label class="infs">Validade : ${item.Dt_Validade}</label><br>
+                                <label class="infs">SKU : ${item.SKU}</label><br>
+                                <label class="infs">Quantidade : ${item.Qtd_Prod }</label>
+                                `;
+                                estoque.appendChild(produtoDiv);
+                            });
+
+                            const conf = document.getElementById('js');
+                            conf.classList.add('abrir');
+                           })
+                           .catch(error => {
+                            console.error('Error:', error);
+                            alert('erro ao buscar');
+                            });
+
+                        }
+                    </script>
+      
+</body>
+</html>

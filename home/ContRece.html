@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Ifarma_Integracao-main/Ifarma.css">
+    <link rel="shortcut icon" href="/Ifarma_Integracao-main/imgs/logo.png" type="image/x-icon">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+    
+    <style>
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #360101 , #9C0202);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    cursor: pointer;
+ }
+     header {
+    height: 20px; 
+    padding: 30px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    gap: 15px;
+}
+
+header .log {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: aliceblue;
+}
+
+header img {
+    width: 70px;
+}
+
+.corpInf {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    color: aliceblue;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 30px;
+    color: aliceblue;
+    text-align: center;
+}
+form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        column-gap: 40px;
+        align-items: start;
+        width: 90%;
+    }
+    .gps-informacoes {
+        grid-column: span 2; 
+    }
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: aliceblue;
+        margin-bottom: 15px;
+    }
+
+.criarDado {
+    height: 35px;
+        border-radius: 5px;
+        border: none;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    
+}
+
+.bttCadastrar {
+    grid-column: span 2; 
+    justify-self: center;
+        height: 50px;
+        width: 80%;
+        margin-top: 20px;
+        border-radius: 5px;
+        background: #f7f7f7;
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        transition: background 0.3s;
+        
+    }
+
+    .bttCadastrar:hover {
+        background: #a21010;
+        transform: scale(1.05);
+    }
+
+
+.js{
+    display: none;
+    width: 1000px;
+    height: 140px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.js.abrir{
+    display: flex;
+    background: linear-gradient(to bottom, #360101af , #9c02029a);
+}
+
+.pop-up{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+#popUp1{
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+#popUp2{
+    margin-top: -90px;
+    margin-left: 170px;
+}
+
+
+/* Responsividade */
+ @media (max-width: 768px) {
+        header {
+            flex-direction: column; 
+            padding: 10px 0; 
+            height: auto; 
+            gap: 10px; 
+        }
+
+        header .log {
+            text-align: center; 
+        }
+
+        header img {
+            width: 50px; 
+        }
+
+        h2 {
+            font-size: 30px; 
+        }
+    }
+
+
+
+    </style>
+
+
+
+    
+    <title>IFarma</title>
+</head>
+<body>
+    <header>
+        <div class="log">
+            <img src="/Ifarma_Integracao-main/imgs/logo.png" width="80px" alt="Logo IFarma">
+            <h2>IFarma</h2>
+        </div>
+    </header>
+
+    <main class="corpInf">
+        <h2>Controlar Receita</h2>
+        <form action="/Ifarma_Integracao-main/home/home.html" id="contRece" method="post">
+
+           <div>
+            <label class="infs" for="codRecei">Código Receita</label>
+            <input type="text" id="codRecei" class="criarDado" required>
+        </div>
+        <div>
+            <label class="infs" for="nomePaci">Nome Paciente</label>
+            <input type="text" id="nomePaci" class="criarDado" required>
+        </div>
+        <div>
+            <label class="infs" for="nomeMedi">Nome do Médico</label>
+            <input type="text" id="nomeMedi" class="criarDado" required>
+        </div>
+        <div>
+            <label class="infs" for="prescricao">Prescrição</label>
+            <input type="text" id="prescricao" class="criarDado" required>
+        </div>
+
+        <div>
+            <label class="infs" for="dtEmissao">Data de Emissão</label>
+            <input type="date" id="dtEmissao" class="criarDado" required>
+        </div>
+        <div>
+            <label class="infs" for="validade">Validade</label>
+            <input type="date" id="validade" class="criarDado" required>
+        </div>
+        <div>
+            <label class="infs" for="CRM">CRM do Médico</label>
+            <input type="text" id="CRM" class="criarDado" required>
+        </div>
+        <!-- Botão centralizado -->
+        <button type="submit" class="bttCadastrar">Cadastrar</button>
+    </form>
+</main>
+
+        <div class="mt-3" id="mensagem"></div>
+
+        <script>
+            function alerta(){
+                alert('Cadastrado com sucesso!');
+                window.location.href = 'home.html';
+            }
+           </script>
+
+    </main>
+
+    <script>
+
+        document.getElementById('contRece').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const Nome_Paciente = document.getElementById('nomePaci').value;
+            const Cod_Receita = document.getElementById('codRecei').value;
+            const Nome_Medico = document.getElementById('nomeMedi').value;
+            const Dt_Emissao = document.getElementById('dtEmissao').value;
+            const Prescricao = document.getElementById('prescricao').value;
+            const Dt_Validade = document.getElementById('validade').value;
+            const CRM_Medico = document.getElementById('CRM').value;
+
+            const tb_receita = {Nome_Paciente , Cod_Receita , Nome_Medico , Dt_Emissao , Prescricao , Dt_Validade ,CRM_Medico} ;
+
+            fetch('http://localhost:3008/Controle/Receitas' , {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(tb_receita)
+            })
+            .then(response => response.json())
+            .then(data => {
+                // const mensagem = document.getElementById('mensagem');
+                // mensagem.classList.add('alert', 'alert-success');
+                // mensagem.innerText = data.message; 
+                // document.getElementById('contRece').reset();
+                if(data.message === 'Receita cadastrada com sucesso'){
+                    alert('Receita cadastrada com sucesso');
+                    window.location.href = 'home.html';
+                }
+            })
+            .catch(error => {
+                const mensagem = document.getElementById('mensagem');
+                mensagem.classList.add('alert', 'alert-danger');
+                mensagem.innerText = 'Erro ao cadastrar a receita'; 
+            });
+        });
+
+    </script>
+
+</body>
+</html>

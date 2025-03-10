@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Ifarma_Integracao-main/Ifarma.css">
+    <link rel="shortcut icon" href="/Ifarma_Integracao-main/imgs/logo.png" type="image/x-icon">
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+    
+    <style>
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #360101 , #9C0202);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    cursor: pointer;
+ }
+     header {
+    height: 20px; 
+    padding: 30px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    gap: 15px;
+}
+
+header .log {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: aliceblue;
+}
+
+header img {
+    width: 70px;
+}
+.corpInf {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    color: aliceblue;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 30px;
+    color: aliceblue;
+    text-align: center;
+}
+form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        column-gap: 40px;
+        row-gap: 15px;
+        align-items: start;
+        width: 90%;
+    }
+    .gps-informacoes {
+        grid-column: span 2; 
+    }
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: aliceblue;
+        margin-bottom: 15px;
+    }
+
+.criarDado {
+    height: 35px;
+        border-radius: 5px;
+        border: none;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    
+}
+
+.bttCadastrar {
+    grid-column: span 2; 
+    justify-self: center;
+        height: 50px;
+        width: 80%;
+        margin-top: 20px;
+        border-radius: 5px;
+        background: #f7f7f7;
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        transition: background 0.3s;
+        
+    }
+
+    .bttCadastrar:hover {
+        background: #a21010;
+        transform: scale(1.05);
+    }
+
+.js{
+    display: none;
+    width: 1000px;
+    height: 140px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.js.abrir{
+    display: flex;
+    background: linear-gradient(to bottom, #360101af , #9c02029a);
+}
+
+.pop-up{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+#popUp1{
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+#popUp2{
+    margin-top: -90px;
+    margin-left: 170px;
+}
+.padrao {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colunas por linha */
+    gap: 20px; /* Adiciona um espaçamento de 20px entre os cards */
+    width: 80%;
+    margin: auto;
+}
+
+.venda-item {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.historico{
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+
+/* Responsividade */
+ @media (max-width: 768px) {
+        header {
+            flex-direction: column; 
+            padding: 10px 0; 
+            height: auto; 
+            gap: 10px; 
+        }
+
+        header .log {
+            text-align: center; 
+        }
+
+        header img {
+            width: 50px; 
+        }
+
+        h2 {
+            font-size: 30px; 
+        }
+    }
+
+    </style>
+    
+    
+    <title>IFarma</title>
+</head>
+<body>
+    <header>
+        <div class="log">
+            <img src="/Ifarma_Integracao-main/imgs/logo.png" width="80px" alt="Logo IFarma">
+            <h2>IFarma</h2>
+        </div>
+    </header>
+<br>
+    <main class="corpInf">
+        <h2>Registro da Venda</h2>
+        <form action="/Ifarma_Integracao-main/home/home.html" id="regVend" method="get">
+            <!-- Primeira coluna -->
+            <div>
+                <label class="infs" for="numVend">Número da Venda</label>
+                <input type="text" id="numVend" class="criarDado" required>
+            </div>
+            <div>
+                <label class="infs" for="cliente">Cliente</label>
+                <select id="cliente" class="criarDado" required>
+                    <option value="">Selecione o Cliente</option>
+                </select>
+            </div>
+            <div>
+                <label class="infs" for="formPag">Forma de Pagamento</label>
+                <select id="formPag" class="criarDado" required>
+                    <option value="">Tipo Pagamentos</option>
+                    <option value="Dinheiro">Dinheiro</option>
+                    <option value="Pix">Pix</option>
+                    <option value="Débito">Débito</option>
+                    <option value="Crédito">Crédito</option>
+                </select>
+            </div>
+            <div>
+                <label class="infs" for="qtdProd">Quantidade de Produto</label>
+                <input type="number" id="qtdProd" class="criarDado" required>
+            </div>
+            <!-- Segunda coluna -->
+            <div>
+                <label class="infs" for="dtVenda">Data da Venda</label>
+                <input type="date" id="dtVenda" class="criarDado" required>
+            </div>
+            <div>
+                <label class="infs" for="medVend">Medicamento Vendido</label>
+                <select id="medVend" class="criarDado" required>
+                    <option value="">Selecione o Medicamento</option>
+                </select>
+            </div>
+            <div>
+                <label class="infs" for="vlrTotal">Valor Total</label>
+                <input type="number" id="vlrTotal" class="criarDado" step="0.01" required>
+            </div>
+            <!-- Botão centralizado -->
+            <button type="submit" class="bttCadastrar">Cadastrar</button>
+        </form>
+    </main>
+    
+
+    <script>
+
+        document.getElementById('regVend').addEventListener('submit', function(event){
+            event.preventDefault();
+
+            const Num_Vend = document.getElementById('numVend').value;
+            const Id_Cliente = document.getElementById('cliente').value;
+            const Forma_Pag = document.getElementById('formPag').value;
+            const Qtd_Prod = document.getElementById('qtdProd').value;
+            const Dt_Venda = document.getElementById('dtVenda').value;
+            const Id_Produto = document.getElementById('medVend').value;
+            const Vlr_Total = document.getElementById('vlrTotal').value;
+
+            if(!Num_Vend || !Id_Cliente || !Forma_Pag || !Qtd_Prod || !Dt_Venda || !Id_Cliente || !Vlr_Total){alert('preencha todos os campos')};
+
+            const tb_venda = {Num_Vend, Id_Cliente, Forma_Pag, Qtd_Prod, Dt_Venda, Id_Produto, Vlr_Total};
+
+            fetch('http://localhost:3010/Registro/Venda', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(tb_venda)
+            })
+           .then(response => response.json())
+           .then(data => {
+            //  const mensagem = document.getElementById('mensagem');
+            //  mensagem.classList.add('alert', 'alert-success');
+            //  mensagem.innerText = data.message;
+            //  document.getElementById('regVend').reset();
+
+             if(data.message === 'Venda cadastrada'){
+                    alert('Venda cadastrada ')
+                    window.location.href = '/home/home.html';
+                }
+           })
+           .catch(error => {
+             const mensagem = document.getElementById('mensagem');
+             mensagem.classList.add('alert', 'alert-danger');
+             mensagem.innerText = error.message;
+           });
+        });
+
+        document.addEventListener('DOMContentLoaded', function (){
+
+            fetch('http://localhost:3010/Registro/Venda/Cliente')
+               .then(response => {
+                    console.log('Cliente : ', response.status);
+                    return response.json();
+                })
+               .then(data => {
+                    console.log('Clientes encontrados : ',data);
+                    const selectCliente = document.getElementById('cliente');
+                    selectCliente.innerHTML = '<option>Selecione o Cliente</option>';
+
+                    if(data.length === 0){
+                        const option = document.createElement('option');
+                        option.value = "";
+                        option.textContent = "Nenhum um Cliente disponivel";
+                        selectCliente.appendChild(option);
+                    }
+
+                    data.forEach(cliente => {
+                        const option = document.createElement('option');
+                        option.value = cliente.Id_Cliente;
+                        option.textContent = cliente.Nome;
+                        selectCliente.appendChild(option);
+                    });
+                })
+               .catch(error => {
+                    console.error('Erro ao buscar Clientes:', error);
+                });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            fetch('http://localhost:3010/Registro/Venda/Produto')
+            .then(response => {
+                console.log('Medicamentos : ',response.status);
+                return response.json();
+            })
+            
+            .then(data => {
+                    console.log('Medicamentos encontrados : ',data);
+                    const selectMedicamentos = document.getElementById('medVend');
+                    selectMedicamentos.innerHTML = '<option>Selecione o Medicamento</option>';
+
+                    if(data.length === 0){
+                        const option = document.createAttribute('option');
+                        option.value = "";
+                        option.textContent = "Nenhum um Medicamento disponivel";
+                        selectMedicamentos.appendChild(option);
+                    }
+
+                    data.forEach(medicamentos => {
+                        const option = document.createElement('option');
+                        option.value = medicamentos.Id_Produto;
+                        option.textContent = medicamentos.Nome;
+                        selectMedicamentos.appendChild(option);
+                    });
+            })
+            .catch(error => {
+                console.error('Erro ao buscar Medicamentos:', error);
+            });
+        });
+
+    </script>
+
+</body>
+</html>

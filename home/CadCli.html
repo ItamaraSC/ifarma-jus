@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="/imgs/logo.png" type="image/x-icon">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+    
+        
+    <style>
+        
+        body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #360101 , #9C0202);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    cursor: pointer;
+}
+
+header {
+    position: relative; 
+    padding: 20px 0;
+    height: 100px;
+    width: 100%; 
+    z-index: 1000; 
+    display: flex; 
+    align-items: center;
+    justify-content: space-between; 
+    padding: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    gap: 15px;
+}
+
+header .log {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: aliceblue;
+}
+
+header img {
+    width: 60px;
+}
+
+.corpInf {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    color: aliceblue;
+    margin-top: 10px;
+}
+
+h2 {
+    font-size: 30px;
+    color: aliceblue;
+    text-align: center;
+}
+
+.gps-informacoes {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.criarDado {
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    width: 100%;
+}
+
+.bttCadastrar {
+    margin-top: 20px;
+    font-size: 16px;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background: #f7f7f7;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.bttCadastrar:hover {
+    background: #a21010;
+    transform: scale(1.05);
+}
+
+.js{
+    display: none;
+    width: 1000px;
+    height: 140px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.js.abrir{
+    display: flex;
+    background: linear-gradient(to bottom, #360101af , #9c02029a);
+}
+
+.pop-up{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+#popUp1{
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+#popUp2{
+    margin-top: -90px;
+    margin-left: 170px;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .corpInf {
+        max-width: 90%;
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .bttCadastrar {
+        width: 100%;
+    }
+}
+
+
+    </style>
+    <title>IFarma</title>
+</head>
+<body>
+    <header>
+        <div class="log">
+            <img src="/imgs/logo.png" width="80px" alt="Logo IFarma">
+            <h2>IFarma</h2>
+        </div>
+    </header>
+
+    <main class="corpInf">
+        <h2>Cadastrar Cliente</h2>
+        <form class="cadCli" action="/home/home.html" id="cadCli" method="get">
+           
+           <div class="gps-informacoes" id="gp-1">
+               <label class="infs">Nome</label>
+               <input type="text" id="nome" class="criarDado" required>
+               <br>
+               <label class="infs">CPF </label>
+               <input type="text" id="cpf" class="criarDado" required>
+            </div>
+
+            <div class="gps-informacoes" id="gp-2">
+                <label class="infs">E-mail </label>
+                <input type="text" id="email" class="criarDado" required>
+                <br>
+                <label class="infs">Telefone </label>
+                <input type="text" id="telefone" class="criarDado" required>
+            </div>
+
+            <button type="submit" value="Cadastrar" class="bttCadastrar" >Cadastrar</button>
+
+        </form>
+        <div class="mt-3" id="mensagem"></div>
+
+       
+    </main>
+
+
+    <script>
+        document.getElementById('cadCli').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const CPF = document.getElementById('cpf').value;
+            const Nome = document.getElementById('nome').value;
+            const Email = document.getElementById('email').value;
+            const Telefone = document.getElementById('telefone').value;
+
+            const tb_cliente = { CPF , Nome , Email , Telefone };
+
+            // Enviando a requisição para a API
+            fetch('http://localhost:3001/Cadastra/Cliente', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(tb_cliente),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.message === 'cliente cadastrado com sucesso'){
+                    alert('Cliente cadastrado com sucesso!');
+                    window.location.href = 'home.html';
+                }
+                // const mensagem = document.getElementById('mensagem');
+                // mensagem.classList.add('alert', 'alert-success');
+                // mensagem.innerText = data.message; 
+            })
+            .catch(error => {
+                const mensagem = document.getElementById('mensagem');
+                mensagem.classList.add('alert', 'alert-danger');
+                mensagem.innerText = 'Erro ao cadastrar o usuário'; 
+            });
+        });
+        
+    </script>
+
+</body>
+</html>

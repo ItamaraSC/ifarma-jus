@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="/Ifarma_Integracao-main/imgs/logo.png" type="image/x-icon">
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+    
+    <style>
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #360101 , #9C0202);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    cursor: pointer;
+ }
+     header {
+    height: 20px; 
+    padding: 30px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    gap: 15px;
+}
+
+header .log {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: aliceblue;
+}
+
+header img {
+    width: 70px;
+}
+.corpInf {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    color: aliceblue;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 30px;
+    color: aliceblue;
+    text-align: center;
+}
+form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        column-gap: 40px;
+        align-items: start;
+        width: 90%;
+    }
+    .gps-informacoes {
+        grid-column: span 2; 
+    }
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: aliceblue;
+        margin-bottom: 15px;
+    }
+
+.criarDado {
+    height: 35px;
+        border-radius: 5px;
+        border: none;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    
+}
+
+.bttCadastrar {
+    grid-column: span 2; 
+    justify-self: center;
+        height: 50px;
+        width: 80%;
+        margin-top: 20px;
+        border-radius: 5px;
+        background: #f7f7f7;
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        transition: background 0.3s;
+        
+    }
+
+    .bttCadastrar:hover {
+        background: #a21010;
+        transform: scale(1.05);
+    }
+
+.js{
+    display: none;
+    width: 1000px;
+    height: 140px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.js.abrir{
+    display: flex;
+    background: linear-gradient(to bottom, #360101af , #9c02029a);
+}
+
+.pop-up{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+#popUp1{
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+#popUp2{
+    margin-top: -90px;
+    margin-left: 170px;
+}
+.padrao {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colunas por linha */
+    gap: 20px; /* Adiciona um espaçamento de 20px entre os cards */
+    width: 80%;
+    margin: auto;
+}
+
+.venda-item {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.historico{
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+
+/* Responsividade */
+ @media (max-width: 768px) {
+        header {
+            flex-direction: column; 
+            padding: 10px 0; 
+            height: auto; 
+            gap: 10px; 
+        }
+
+        header .log {
+            text-align: center; 
+        }
+
+        header img {
+            width: 50px; 
+        }
+
+        h2 {
+            font-size: 30px; 
+        }
+    }
+
+
+    </style>
+    
+
+
+    
+    <title>IFarma</title>
+</head>
+<body>
+    <header>
+        <div class="log">
+            <img src="/imgs/logo.png" width="80px" alt="Logo IFarma">
+            <h2>IFarma</h2>
+        </div>
+    </header>
+    <br>
+    <main class="corpInf">
+        <h2>Perfil</h2>
+        <form action="/home/home.html" id="perfil" method="get">
+            <!-- Primeira coluna -->
+            <div>
+                <label class="infs" for="nome">Nome</label>
+                <input type="text" id="nome" class="criarDado" required>
+            </div>
+            <div>
+                <label class="infs" for="cpf">CPF</label>
+                <input type="text" id="cpf" class="criarDado" required>
+            </div>
+            <!-- Segunda coluna -->
+            <div>
+                <label class="infs" for="senha">Senha</label>
+                <input type="password" id="senha" class="criarDado" required>
+            </div>
+            <div>
+                <label class="infs" for="status">Status</label>
+                <input type="text" id="status" class="criarDado" required>
+            </div>
+            <!-- Botão centralizado -->
+            <button type="submit" class="bttCadastrar">Alterar</button>
+        </form>
+    <script>
+
+        document.addEventListener('DOMContentLoaded' , function () {
+
+            const CPF = localStorage.getItem('cpf');
+
+            if(!CPF){
+                alert('cpf n encontrado');
+                return;
+            }
+
+            fetch(`http://localhost:3007/perfil?CPF=${CPF}`)
+            .then(response => response.json())
+            .then(data => {
+                if(data.message){
+                    alert('n logado ' + data.message);
+                    return;
+                }
+                document.getElementById('nome').value = data.Nome;
+                document.getElementById('cpf').value = data.CPF;
+                document.getElementById('senha').value = data.Senha;
+                document.getElementById('status').value = data.Tipo_Usuario;
+            })
+            .catch(error => {
+                const mensagem = document.getElementById('mensagem');
+                mensagem.classList.add('alert', 'alert-danger');
+                mensagem.innerText = 'Houve um erro ao cadastrar.'; 
+            })
+        });
+
+    </script>
+
+    
+
+</body>
+</html>
