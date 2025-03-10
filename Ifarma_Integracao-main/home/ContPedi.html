@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="/Ifarma_Integracao-main/imgs/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+    
+    <style>
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #360101 , #9C0202);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    cursor: pointer;
+ }
+     header {
+    height: 20px; 
+    padding: 30px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    gap: 15px;
+}
+
+header .log {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: aliceblue;
+}
+
+header img {
+    width: 70px;
+}
+
+.corpInf {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    color: aliceblue;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+
+h2 {
+    
+    font-size: 30px;
+    color: aliceblue;
+    text-align: center;
+}
+form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        column-gap: 40px;
+        align-items: start;
+        width: 90%;
+    }
+    .gps-informacoes {
+        grid-column: span 2; 
+    }
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: aliceblue;
+        margin-bottom: 15px;
+    }
+
+.criarDado {
+    height: 35px;
+        border-radius: 5px;
+        border: none;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    
+}
+
+.bttCadastrar {
+    grid-column: span 2; 
+    justify-self: center;
+        height: 50px;
+        width: 80%;
+        margin-top: 20px;
+        border-radius: 5px;
+        background: #f7f7f7;
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        transition: background 0.3s;
+        
+    }
+
+    .bttCadastrar:hover {
+        background: #a21010;
+        transform: scale(1.05);
+    }
+
+
+.js{
+    display: none;
+    width: 1000px;
+    height: 140px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.js.abrir{
+    display: flex;
+    background: linear-gradient(to bottom, #360101af , #9c02029a);
+}
+
+.pop-up{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+#popUp1{
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+#popUp2{
+    margin-top: -90px;
+    margin-left: 170px;
+}
+
+
+/* Responsividade */
+ @media (max-width: 768px) {
+        header {
+            flex-direction: column; 
+            padding: 10px 0; 
+            height: auto; 
+            gap: 10px; 
+        }
+
+        header .log {
+            text-align: center; 
+        }
+
+        header img {
+            width: 50px; 
+        }
+
+        h2 {
+            font-size: 30px; 
+        }
+    }
+
+
+
+    </style>
+
+
+
+    <title>IFarma</title>
+</head>
+<body>
+    <header>
+        <div class="log">
+            <img src="/Ifarma_Integracao-main/imgs/logo.png" width="80px" alt="Logo IFarma">
+            <h2>IFarma</h2>
+        </div>
+    </header>
+
+    
+           
+            <main class="corpInf">
+                <h2>Controlar Pedido</h2>
+                <form action="/Ifarma_Integracao-main/home/home.html" id="contPedi" method="post">
+                    <!-- Primeira coluna -->
+                    <div>
+                        <label class="infs" for="dtPedido">Data do Pedido</label>
+                        <input type="date" id="dtPedido" class="criarDado" required>
+                    </div>
+                    <div>
+                        <label class="infs" for="produto">Produto</label>
+                        <input type="text" id="produto" class="criarDado" required>
+                    </div>
+
+                <div>
+            <label class="infs" for="statusProd">Status do Produto</label>
+            <select id="statusProd" class="criarDado" required>
+                <option value="">Selecione o Status</option>
+                <option value="Pendente">Pendente</option>
+                <option value="Aprovado">Aprovado</option>
+                <option value="Cancelado">Cancelado</option>
+                <option value="Enviado">Enviado</option>
+                <option value="Recebido">Recebido</option>
+            </select>
+        </div>
+        <div>
+            <label class="infs" for="valorUni">Valor Unitário</label>
+            <input type="number" id="valorUni" class="criarDado"  required>
+        </div>
+
+                    <!-- <div class="mudLug">
+                        <label class="infsExe">Responsavel </label>
+                        <input type="text" id="responsavel" class="criarDado" required>
+                    </div> -->
+            </div>
+
+            <div>
+                <label class="infs" for="fornecedor">Fornecedor</label>
+                <select id="fornecedor" class="criarDado" required>
+                    <option value="">Selecione um Fornecedor</option>
+                </select>
+            </div>
+                <!-- <input type="text" id="fornecedor" class="criarDado" required> -->
+                <div>
+                    <label class="infs" for="qtdPedida">Quantidade Pedida</label>
+                    <input type="number" id="qtdPedida" class="criarDado" required>
+                </div>
+                <div>
+                    <label class="infs" for="dtEntrega">Data de Entrega</label>
+                    <input type="date" id="dtEntrega" class="criarDado" required>
+                </div>
+                <div>
+                    <label class="infs" for="valorTotal">Valor Total</label>
+                    <input type="number" id="valorTotal" class="criarDado" step="0.01" required>
+                </div>
+            </div>
+
+            <button type="submit" value="Cadastrar" class="bttCadastrar" >Cadastrar</button>
+        
+        </form>
+
+        <div class="mt-3" id="mensagem"></div>
+
+        
+
+    </main>
+
+    <script>
+
+        document.getElementById('contPedi').addEventListener('submit' , function(event){
+            event.preventDefault();
+
+            const Dt_Entrega = document.getElementById('dtEntrega').value;
+            const Dt_pedido = document.getElementById('dtPedido').value;
+            const Id_Fornecedor = document.getElementById('fornecedor').value;
+            const Qtd_pedida = document.getElementById('qtdPedida').value;
+            const Produto = document.getElementById('produto').value;
+            const Vlr_Unitario_Prod = document.getElementById('valorUni').value;
+            const Status_Pedido = document.getElementById('statusProd').value;
+            const Vlr_Total = document.getElementById('valorTotal').value;
+
+            if(!Status_Pedido || !Vlr_Total || !Dt_Entrega || !Dt_pedido  || !Qtd_pedida || !Produto || !Vlr_Unitario_Prod || !Id_Fornecedor){
+                alert('Preencha todos os campos!');
+                return;
+            }
+
+            const tb_pedido = {Status_Pedido , Dt_Entrega , Dt_pedido  , Produto , Qtd_pedida , Vlr_Unitario_Prod , Vlr_Total , Id_Fornecedor };
+            console.log("Enviando para API:", tb_pedido);
+            fetch('http://localhost:3009/Controle/Pedido', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(tb_pedido)
+            })
+           .then(response => response.json())
+           .then(data => {
+                // const mensagem = document.getElementById('mensagem');
+                // mensagem.classList.add('alert', 'alert-success');
+                // mensagem.innerText = data.message;
+                // document.getElementById(''contPedi'').reset();
+                if(data.message === 'Pedido controlado com sucesso'){
+                    alert('Cadastrado com sucesso!');
+                    window.location.href = 'home.html';
+                }
+           })
+           .catch(error => {
+                const mensagem = document.getElementById('mensagem');
+                mensagem.classList.add('alert', 'alert-danger');
+                mensagem.innerText = error.message;
+           });
+
+        });
+
+
+        document.addEventListener('DOMContentLoaded' , function () {
+
+            fetch('http://localhost:3009/Fornecedor')
+            .then(response => {
+                    // console.log('Fornecedor : ' ,response.status);
+                    // return 
+                    return response.json();
+                })
+
+                .then(data => {
+                    console.log("Fornecedor encontrado : " ,data);
+                    const selectFornecedor = document.getElementById('fornecedor');
+                    selectFornecedor.innerHTML = '<option value="">Selecione um Fornecedor</option>';
+                    
+                    if (data.length === 0) {
+                        const option = document.createElement('option');
+                        option.value = "";
+                        option.text = "Nenhum fornecedor encontrado.";
+                        selectFornecedor.appendChild(option);
+                    }
+
+                    data.forEach(fornecedor => {
+                        const option = document.createElement('option');
+                        option.value = fornecedor.Id_Fornecedor;
+                        option.text = fornecedor.Nome;
+                        selectFornecedor.appendChild(option);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+
+</script>
+
+</body>
+</html>

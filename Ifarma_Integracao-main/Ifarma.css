@@ -1,0 +1,352 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #360101 , #9C0202);
+    cursor: pointer;
+    
+}
+header{
+        position: absolute; /* Mantém fixo no topo */
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000; /* Garante que fique acima de outros elementos */
+    }
+    
+button, input[type="button"] {
+    font-family: 'Raleway', sans-serif; /* Escolha a fonte que deseja */
+    font-size: 16px;  /* Ajuste o tamanho da fonte */
+    font-weight: 600;  /* Deixa a fonte mais destacada */
+    color: rgb(9, 4, 4); /* Cor do texto */
+    border: none; /* Remove a borda */
+    padding: 12px 18px; /* Ajuste do tamanho interno */
+    border-radius: 5px; /* Deixa os cantos arredondados */
+    cursor: pointer; /* Cursor de mão ao passar por cima */
+    transition: 0.3s; /* Efeito de transição */
+    width: 100%;
+    max-width: 220px;
+    text-align: center;
+}
+button:hover, input[type="button"]:hover {
+    background-color: #e74242; /* Cor mais escura no hover */
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin-top: -10px;
+    padding-top: 10px;
+    }
+
+/*'Raleway', sans-serif;
+}
+/* index */
+.corpo{
+    color: aliceblue;
+    font-size: 25px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;top: 40vh;
+    
+}
+  
+.logoIndex{
+    width: 100%;
+    max-width: 400px;
+}
+/* escoLog */
+.log{
+    font-size: 18px;
+    display: flex;
+    color: aliceblue;
+}
+
+.logDD{
+    font-size: 25px;
+    color: aliceblue;
+    text-align: center;
+    margin-top: 80px;
+}
+button{
+    font-family: 'Inter', sans-serif;
+}
+.inputEscoLog{
+    width: 200px;
+    max-width: 200px;
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.ES{
+    font-size: 20px;
+    color: rgba(255, 0, 0, 0.556);
+    display:block;
+}
+
+.dadoLog{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.caixaLembr{
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    align-items: center;
+}
+
+.cx{
+    width: 25px;
+    height: 25px;
+    background-color: aliceblue;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+}
+.cx.x::before{
+    content: 'X';
+    text-align: center;
+    color: black;
+    line-height: 25px;
+}
+
+.conf{
+    font-size: 15px;
+    color: black;
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: aliceblue;
+    border: none;
+}
+/* ES */
+.redeSenh{
+    color: aliceblue;
+    text-align: center;
+    margin: 20px;
+    margin-top: 120px;
+}
+.dadoRedSenh{
+    display: block;
+}
+
+.bttES{
+    font-size: 20px;
+    width: 100px;
+    height: 34px;
+    cursor: pointer;
+}
+/* home */
+#h2Home { 
+    font-size: 30px;
+    color: aliceblue;
+    margin-left: 30px;
+} 
+
+.footer-content {
+    display: block;
+    flex-wrap:wrap; 
+}
+
+#gps-btt{
+    display: flex;
+    flex-direction:column
+    
+
+}
+.button-group1{
+    margin-top: 45px;
+    margin-left: 125px; 
+}
+.button-group2{
+    margin-left: 32vw; 
+    margin-top: -295.5px;
+}
+.button-group3{
+    margin-left: 54vw;
+    margin-top: -223px; 
+}
+.button-group4{
+    margin-left: 75vw; 
+    margin-top: -285px;
+}
+
+#bttHome {
+    margin: 10px;
+    width: 180px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+}
+
+.iconPerf{
+    margin-top: 60px;
+    margin-left: 80vw;
+}
+
+/* corpos do preenchimento  */
+.corpInf{
+    text-align: center;
+    font-size: 15;
+    color: aliceblue;
+}
+
+.gps-informacoes{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+#gp-1{
+    margin-left: 490px;
+    margin-top: 140px;
+}
+
+#gp-2{
+    margin-left: 790px;
+    margin-top: -105px;
+}
+
+.criarDado{
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+}
+
+.infsExeProd{
+    width: 200px;
+    display: flex;
+}
+
+.infs{
+    display: flex;
+}
+
+.bttCadastrar{
+    margin-right: 30px ;
+    margin-top: 80px;
+    font-size: 15px;
+    width: 130px;
+    height: 34px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+#gp-2Prod{
+    margin-top: -300px;
+    margin-left: 53vw;
+}
+
+#gp-2Serv{
+    margin-top: -170px;
+    margin-left: 53vw;
+}
+
+#gp-2Forn{
+    margin-top: -235px;
+    margin-left: 53vw;
+}
+
+#gp-2Rece{
+    margin-top: -230px;
+    margin-left: 53vw;
+}
+
+.infsExe{
+    width: 100%;
+}
+
+.mudLug{
+    margin-top: -5px;
+    margin-left: 11.7vw;
+}
+
+#gp-2Pedi{
+    margin-top: -295px;
+    margin-left: 53vw;
+}
+
+.js{
+    display: none;
+    width: 1000px;
+    height: 140px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.js.abrir{
+    display: flex;
+    background: linear-gradient(to bottom, #360101af , #9c02029a);
+}
+
+.pop-up{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+#popUp1{
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+#popUp2{
+    margin-top: -90px;
+    margin-left: 170px;
+}
+
+.estoque{
+    display: flex;justify-content: center;
+}
+
+.altContEsto{
+    /* margin-left: 50vw; */
+    margin-top: 70px;
+}
+
+.padrao {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colunas por linha */
+    gap: 20px; /* Adiciona um espaçamento de 20px entre os cards */
+    width: 80%;
+    margin: auto;
+}
+
+.venda-item {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.historico{
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}

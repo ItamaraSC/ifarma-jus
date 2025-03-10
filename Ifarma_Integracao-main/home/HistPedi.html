@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Ifarma_Integracao-main/Ifarma.css">
+    <link rel="shortcut icon" href="/Ifarma_Integracao-main/imgs/logo.png" type="image/x-icon">
+   
+    
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+    
+    <style>
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #360101 , #9C0202);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    cursor: pointer;
+ }
+     header {
+    height: 20px; 
+    padding: 30px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    gap: 15px;
+}
+
+header .log {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: aliceblue;
+}
+
+header img {
+    width: 70px;
+}
+
+.js{
+    display: none;
+    width: 1000px;
+    height: 140px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.js.abrir{
+    display: flex;
+    background: linear-gradient(to bottom, #360101af , #9c02029a);
+}
+
+.pop-up{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+#popUp1{
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+#popUp2{
+    margin-top: -90px;
+    margin-left: 170px;
+}
+.padrao {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colunas por linha */
+    gap: 20px; /* Adiciona um espaçamento de 20px entre os cards */
+    width: 80%;
+    margin: auto;
+}
+
+.venda-item {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.historico{
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+
+/* Responsividade */
+ @media (max-width: 768px) {
+        header {
+            flex-direction: column; 
+            padding: 10px 0; 
+            height: auto; 
+            gap: 10px; 
+        }
+
+        header .log {
+            text-align: center; 
+        }
+
+        header img {
+            width: 50px; 
+        }
+
+        h2 {
+            font-size: 30px; 
+        }
+    }
+
+
+</style>
+
+   
+    <title>IFarma</title>
+</head>
+<body>
+    <header>
+        <div class="log">
+            <img src="/Ifarma_Integracao-main/imgs/logo.png" width="80px" alt="Logo IFarma">
+            <h2>IFarma</h2>
+        </div>
+    </header>
+
+    <main >
+
+        <h1 class="historico">Historico de Pedidos</h1>
+
+        <div id="hist" class="padrao">
+
+
+        </div>
+        
+
+    </main>
+
+    <script>
+
+        function formatarData(dataISO){
+            if(!dataISO) return "data invalida";
+
+            const data = new Date (dataISO);
+            const dia = String(data.getDate()).padStart(2, "0");
+            const mes = String(data.getMonth() + 1).padStart(2, "0");
+            const ano = data.getFullYear();
+            return `${dia}/${mes}/${ano}`;
+        }
+
+        document.addEventListener("DOMContentLoaded" , function () {
+
+            fetch('http://localhost:3012/Historico/Pedidos')
+            .then(response => {
+                if(!response.ok){
+                    throw new Error(`Erro ao buscar historico:`);
+                }    
+                return response.json()
+            })
+            .then(data => {
+                const hist = document.getElementById('hist');
+                hist.innerHTML = '';
+
+                data.forEach(item => {
+                    const pedidoDiv = document.createElement('div');
+                    pedidoDiv.classList.add('pedido');
+                    pedidoDiv.innerHTML = `
+                            <label><strong>Data do Pedido:</strong> ${item.Dt_pedido}</label><br>
+                            <label><strong>Produto:</strong> ${item.Produto}</label><br>
+                            <label><strong>Fornecedor ID:</strong> ${item.Id_Fornecedor}</label><br>
+                            <label><strong>Data de Entrega:</strong> ${item.Dt_Entrega}</label><br>
+                            <hr>
+                        `;
+                    hist.appendChild(pedidoDiv);
+                });
+            })
+            .catch(err => {
+                console.log('erro ao encontrar ' ,err)
+                alert('error')
+            });
+
+        });
+
+    </script>
+</body>
+</html>

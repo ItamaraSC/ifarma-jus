@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Ifarma_Integracao-main/Ifarma.css">
+    <link rel="shortcut icon" href="/Ifarma_Integracao-main/imgs/logo.png" type="image/x-icon">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+    
+        
+    <style>
+        body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #360101 , #9C0202);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    cursor: pointer;
+ }
+       header {
+    position: relative; 
+    padding: 10px 0;
+    height: 100px;
+    width: 100%; 
+    z-index: 1000; 
+    display: flex; 
+    align-items: center;
+    justify-content: space-between; 
+    padding: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    gap: 15px;
+}
+
+header .log {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: aliceblue;
+}
+
+header img {
+    width: 60px;
+}
+
+.corpInf {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    color: aliceblue;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+
+h2 {
+    
+    font-size: 30px;
+    color: aliceblue;
+    text-align: center;
+}
+form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        column-gap: 40px;
+        align-items: start;
+        width: 90%;
+    }
+    .gps-informacoes {
+        grid-column: span 2; 
+    }
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: aliceblue;
+        margin-bottom: 15px;
+    }
+
+.criarDado {
+    height: 35px;
+        border-radius: 5px;
+        border: none;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    
+}
+
+
+.bttCadastrar {
+    grid-column: span 2; 
+    justify-self: center;
+        height: 40px;
+        width: 80%;
+        margin-top: 20px;
+        border-radius: 5px;
+        background: #f7f7f7;
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        transition: background 0.3s;
+        
+    }
+
+    .bttCadastrar:hover {
+        background: #a21010;
+        transform: scale(1.05);
+    }
+
+
+.js{
+    display: none;
+    width: 1000px;
+    height: 140px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.js.abrir{
+    display: flex;
+    background: linear-gradient(to bottom, #360101af , #9c02029a);
+}
+
+.pop-up{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+#popUp1{
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+#popUp2{
+    margin-top: -90px;
+    margin-left: 170px;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .corpInf {
+        max-width: 90%;
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .bttCadastrar {
+        width: 100%;
+    }
+}
+
+
+</style>
+
+    
+    <title>IFarma</title>
+</head>
+<body>
+    <header>
+        <div class="log">
+            <img src="/Ifarma_Integracao-main/imgs/logo.png" width="80px" alt="Logo IFarma">
+            <h2>IFarma</h2>
+        </div>
+    </header>
+
+    <main>
+        <h2>Cadastrar Fornecedores</h2>
+        <form id="cadForn" class="cadForn" action="/Ifarma_Integracao-main/home/home.html" method="get">
+            <div>
+                <label>Nome</label>
+                <input id="nome" type="text" class="criarDado" required>
+            </div>
+            <div>
+                <label>Endereço</label>
+                <input id="endereco" type="text" class="criarDado" required>
+            </div>
+            <div>
+                <label>Email</label>
+                <input id="email" type="text" class="criarDado" required>
+            </div>
+            <div>
+                <label>Pagamento</label>
+                <input id="pagamento" type="text" class="criarDado" required>
+            </div>
+            <div>
+                <label>CNPJ</label>
+                <input id="cnpj" type="text" class="criarDado" required>
+            </div>
+            <div>
+                <label>Telefone</label>
+                <input id="telefone" type="text" class="criarDado" required>
+            </div>
+            <div>
+                <label>Produtos Fornecidos</label>
+                <input id="produtosFornecidos" type="text" class="criarDado" required>
+            </div>
+            <div>
+                <label>Código</label>
+                <input id="codigo" type="text" class="criarDado" required>
+            </div>
+            <button type="submit" value="Cadastrar" class="bttCadastrar">Cadastrar</button>
+        </form>
+        
+           
+
+            
+
+        <div class="mt-3" id="mensagem"></div>
+       
+    </main>
+
+    <script>
+        document.getElementById('cadForn').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const Nome = document.getElementById('nome').value;
+            const Endereco = document.getElementById('endereco').value;
+            const Email = document.getElementById('email').value;
+            const Pagamento = document.getElementById('pagamento').value;
+            const CNPJ = document.getElementById('cnpj').value;
+            const Telefone = document.getElementById('telefone').value;
+            const Prod_Forn = document.getElementById('produtosFornecidos').value;
+            const Codigo = document.getElementById('codigo').value;
+
+            const tb_fornecedor = { Nome , Endereco , Email , Pagamento , CNPJ , Telefone , Prod_Forn , Codigo };
+
+            fetch('http://localhost:3003/Cadastrar/Fornecedor', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(tb_fornecedor),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // const mensagem = document.getElementById('mensagem');
+                // mensagem.classList.add('alert', 'alert-success');
+                // mensagem.innerText = data.message; 
+                if(data.message == 'Fornecedor cadastrado com sucesso!'){
+                    alert('Fornecedor cadastrado com sucesso!');
+                    window.location.href = '/home/home.html'
+                }
+            })
+            .catch(error => {
+                const mensagem = document.getElementById('mensagem');
+                mensagem.classList.add('alert', 'alert-danger');
+                mensagem.innerText = 'Erro ao cadastrar o usuário'; 
+            });
+        });
+        
+    </script>
+
+</body>
+</html>
