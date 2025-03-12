@@ -12,9 +12,9 @@ app.use(bodyParser.json());
 const db_ifarma = mysql.createConnection({
     host : 'localhost',
     user : 'root',
-    password : 'senha',
+    password : 'senac',
     database : 'db_ifarma',
-    port : 3306
+    port : 3307
 });
 
 db_ifarma.connect((err) => {

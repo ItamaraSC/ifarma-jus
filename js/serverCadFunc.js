@@ -4,17 +4,17 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = 3002;
+const port = 3042;
 
 app.use(cors());
 app.use(bodyParser.json());
 
 const db_ifarma = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'senha', 
-    database: 'db_ifarma',
-    port: 3306
+    host : 'localhost',
+    user : 'root',
+    password : 'senac',
+    database : 'db_ifarma',
+    port : 3307
 });
 
 db_ifarma.connect((err) => {

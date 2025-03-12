@@ -9,11 +9,11 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const db_ifarma = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'senha',
-    database: 'db_ifarma',
-    port: 3306
+    host : 'localhost',
+    user : 'root',
+    password : 'senac',
+    database : 'db_ifarma',
+    port : 3307
 });
 
 db_ifarma.connect((err) =>{

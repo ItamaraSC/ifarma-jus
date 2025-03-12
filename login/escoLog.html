@@ -11,25 +11,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-         body{
-    padding: 0;
-    margin: 0;
-    font-family: 'Nunito', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 100vh;
-    background: linear-gradient(to bottom, #360101 , #9C0202);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    cursor: pointer;
-        
- }
+        body{ 
+      
+         padding: 0;
+            margin: 0;
+            font-family: 'Nunito', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #360101, #9C0202);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
 
-header{
-    position: relative; 
+        header {
+            position: relative; 
     padding: 20px 0;
     height: 100px;
      width: 100%; 
@@ -40,125 +39,78 @@ header{
     padding: 10px; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
     gap: 15px;
-}
+        }
 
-header .log {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+        header .log {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-header img {
-    width: 80px;
-}
-main {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    padding-top: 10px;
-    box-sizing: border-box;
-    
-}
+        header img {
+            width: 80px;
+        }
 
-    h2 { 
-    font-size: 30px;
-    color: aliceblue;
-    margin-left: 1px;
-} 
-.log{
-    font-size: 18px;
-    display: flex;
-    color: aliceblue;
-}
-
-.logDD{
+        .logDD {
             width: 90%;
             max-width: 400px;
             background: rgba(255, 255, 255, 0.2);
             padding: 2rem;
-            top: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             text-align: center;
-}
-button{
-    font-family: 'Inter', sans-serif;
-}
-.dadoLog{
-    display: flex;
-    justify-content: center;
-    
-}
-.caixaLembr{
-    color: aliceblue;
-    display: flex;
-    justify-content: center;
-    font-size: 15px;
-    align-items: center;
-}
+        }
 
-.cx{
-    width: 25px;
-    height: 25px;
-    background-color: aliceblue;
-    border-radius: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 5px;
-}
-.cx.x::before{
-    content: 'X';
-    text-align: center;
-    color: black;
-    line-height: 25px;
-}
+        .logDD h2 {
+            color: white;
+            margin-bottom: 15px;
+        }
 
-.conf{
-    font-size: 15px;
-    color: black;
-    width: 100px;
-    height: 25px;
-    border-radius: 5px;
-    background-color: aliceblue;
-    border: none;
-}
-.js{
-    display: none;
-    width: 1000px;
-    height: 140px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 10px;
-    margin-top: 30px;
-    padding-right: 30px;
-    padding-left: 30px;
-}
+        .dadoLog {
+            color: white;
+            display: block;
+            text-align: left;
+            margin: 10px 0 5px;
+        }
 
-.js.abrir{
-    display: flex;
-    background: linear-gradient(to bottom, #360101af , #9c02029a);
-}
+        .inputEscoLog {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
 
-.pop-up{
-    display: flex;
-    flex-direction: column;
-    padding-left: 30px;
-}
+        .caixaLembr {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+        }
 
-#popUp1{
-    margin-top: 5px;
-    margin-left: 30px;
-}
+        .conf {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
 
-#popUp2{
-    margin-top: -90px;
-    margin-left: 170px;
-}
+        @media (max-width: 600px) {
+            .logDD {
+                width: 100%;
+                padding: 1rem;
+            }
+
+            header img {
+                width: 60px;
+            }
+        }
 
 </style>
 

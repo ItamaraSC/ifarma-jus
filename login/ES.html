@@ -56,9 +56,9 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    height: 80vh;
-    padding-top: 10px;
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Preenche a tela inteira */
+    padding: 0; /* Remove o espaçamento extra */
     box-sizing: border-box;
     
 }
@@ -98,11 +98,12 @@ main {
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease-in-out;
         }
 
         .bttES:hover {
             background: #b30000;
+            transform: scale(1.05);
         }
 
 
